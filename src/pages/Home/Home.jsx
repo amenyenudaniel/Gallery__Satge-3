@@ -32,6 +32,7 @@ const Home = () => {
       <Navbar />
 
       <ReactSortable
+        animation={300}
         list={images}
         setList={setImages}
         className="random__images__container"

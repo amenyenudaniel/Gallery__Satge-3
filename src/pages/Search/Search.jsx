@@ -70,6 +70,7 @@ const Search = () => {
 
       <ReactSortable
         list={images}
+        animation={300}
         setList={setImages}
         className="random__images__container"
       >
