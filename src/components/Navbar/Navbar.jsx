@@ -11,7 +11,6 @@ const Navbar = () => {
         AIGallery
       </h1>
       <SearchBar />
-      <p>profile</p>
     </nav>
   );
 };
