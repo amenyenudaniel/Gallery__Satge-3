@@ -1,8 +1,9 @@
-import { ImageCard, Loader, Navbar } from "../../components";
+import { Loader, Navbar } from "../../components";
 import { getRandomImages } from "../../utils/fetchApi";
 import "./Home.css";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+
 const Home = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -48,6 +49,7 @@ const Home = () => {
       return setImages(orderImages);
     }
   };
+
   return (
     <div>
       <Navbar />
@@ -75,6 +77,11 @@ const Home = () => {
                           {...provided.dragHandleProps}
                           {...provided.draggableProps}
                           ref={provided.innerRef}
+                          style={{
+                            display: "inline-block",
+                            position: "relative",
+                            width: "20%",
+                          }}
                         >
                           <img src={image?.urls?.regular} alt="" />
                           <p>{slicedDescription}</p>
