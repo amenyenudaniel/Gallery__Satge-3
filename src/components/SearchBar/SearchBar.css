@@ -12,10 +12,102 @@
 .searchBar {
   position: relative;
 }
-.searchBar img {
+.searchDesktop {
   position: absolute;
   width: 35px;
   left: 450px;
   top: 7px;
   cursor: pointer;
+}
+
+.searchMobile {
+  display: none;
+  width: 35px;
+  cursor: pointer;
+}
+
+.app__search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.app__search input {
+  width: 300px;
+  height: 40px;
+  border: 2px solid white;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 1rem 1rem;
+  position: relative;
+}
+.mobile__icon-search {
+  width: 30px;
+  position: absolute;
+  left: 265px;
+}
+.app__mobile {
+  position: fixed;
+  width: 100%;
+  z-index: 1300;
+
+  backdrop-filter: blur(30px);
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+
+.app__search p {
+  color: red;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  .searchBar input {
+    width: 300px;
+    font-size: 1.1rem;
+  }
+
+  .searchDesktop {
+    position: absolute;
+    width: 35px;
+    left: 250px;
+    top: 7px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .random__images__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 3rem;
+    gap: 2rem;
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .searchBar input {
+    display: none;
+  }
+  .app__mobile {
+    display: flex;
+  }
+
+  .searchDesktop {
+    display: none;
+  }
+  .searchMobile {
+    display: block;
+  }
+
+  .searchBar input {
+    display: none;
+  }
 }

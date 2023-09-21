@@ -4,4 +4,28 @@
   gap: 10px;
   padding: 4rem 10%;
   row-gap: 3rem;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 1180px) {
+  .random__images__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 3rem;
+    padding: 1rem 3rem;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .random__images__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 3rem;
+    gap: 2rem;
+    padding: 1rem 2rem;
+  }
 }
