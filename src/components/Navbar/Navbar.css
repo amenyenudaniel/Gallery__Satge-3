@@ -1,0 +1,19 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.842);
+  padding: 1rem 10%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  backdrop-filter: blur(10px);
+}
+
+nav h1 {
+  font-family: 1.2rem;
+  color: white;
+  cursor: pointer;
+}
