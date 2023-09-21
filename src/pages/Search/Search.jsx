@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { ImageCard, Loader, Navbar } from "../../components";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
+import { ReactSortable } from "react-sortablejs";
 const Search = () => {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -67,43 +68,24 @@ const Search = () => {
         Search results for <span>{searchTerm}</span>
       </h1>
 
-      <DragDropContext onDragEnd={handleDragDrop}>
-        <Droppable droppableId="ROOT" type="group">
-          {(provided) => (
-            <div
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-              className="search__container"
-            >
-              {images &&
-                images?.map((image, index) => {
-                  const slicedDescription =
-                    image?.alt_description?.slice(0, 30) + "...";
-                  return (
-                    <Draggable
-                      draggableId={image?.urls?.small}
-                      key={image?.urls?.small}
-                      index={index}
-                    >
-                      {(provided) => (
-                        <div
-                          className="image__card"
-                          {...provided.dragHandleProps}
-                          {...provided.draggableProps}
-                          ref={provided.innerRef}
-                        >
-                          <img src={image?.urls?.regular} alt="" />
-                          <p>{slicedDescription}</p>
-                        </div>
-                      )}
-                    </Draggable>
-                  );
-                })}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
+      <ReactSortable
+        list={images}
+        setList={setImages}
+        className="random__images__container"
+      >
+        {images &&
+          images?.map((image, index) => {
+            const slicedDescription =
+              image?.alt_description?.slice(0, 30) + "...";
+
+            return (
+              <div className="image__card">
+                <img src={image?.urls?.regular} alt="" />
+                <p>{slicedDescription}</p>
+              </div>
+            );
+          })}
+      </ReactSortable>
     </>
   );
 };
