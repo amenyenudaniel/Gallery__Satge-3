@@ -33,9 +33,6 @@ const Search = () => {
     } catch (error) {}
   }, [searchTerm]);
 
-  if (images.length === 0) {
-    return <h1>Opps! Try searching for another keyword.</h1>;
-  }
   if (loading) {
     return <Loader />;
   }
