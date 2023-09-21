@@ -9,12 +9,13 @@ const Home = () => {
   useEffect(() => {
     try {
       setLoading(true);
-      getRandomImages().then((data) => {
-        setImages(data?.results);
-        console.log(data?.results);
-      }).finally = () => {
-        setLoading(false);
-      };
+      getRandomImages()
+        .then((data) => {
+          setImages(data?.results);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     } catch (error) {
       console.log(error);
     }

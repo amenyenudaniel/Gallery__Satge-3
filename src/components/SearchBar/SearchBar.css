@@ -1,0 +1,21 @@
+.searchBar input {
+  width: 500px;
+  height: 50px;
+  border: 2px solid white;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 1rem 1rem;
+}
+.searchBar {
+  position: relative;
+}
+.searchBar img {
+  position: absolute;
+  width: 35px;
+  left: 450px;
+  top: 7px;
+  cursor: pointer;
+}

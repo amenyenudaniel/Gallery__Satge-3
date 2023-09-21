@@ -4,12 +4,13 @@ nav {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
-  background-color: rgba(0, 0, 0, 0.842);
+  background-color: rgba(0, 0, 0, 0.913);
   padding: 1rem 10%;
   position: fixed;
   width: 100%;
   top: 0;
   backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
 nav h1 {

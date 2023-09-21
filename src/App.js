@@ -1,16 +1,21 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, LogIn, SignUp } from "./pages";
+import { Route, Routes } from "react-router-dom";
+import { Home, LogIn, Search, SignUp } from "./pages";
 import "./App.css";
+
+import { ScrollToTop } from "./components";
+
 const App = () => {
   return (
-    <BrowserRouter>
+    <>
+      <ScrollToTop />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<LogIn />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<LogIn />} />
+        <Route path="/gallery" element={<Home />} />
+        <Route path="/search/:searchTerm" element={<Search />} />
       </Routes>
-    </BrowserRouter>
+    </>
   );
 };
 
