@@ -77,11 +77,6 @@ const Home = () => {
                           {...provided.dragHandleProps}
                           {...provided.draggableProps}
                           ref={provided.innerRef}
-                          style={{
-                            display: "inline-block",
-                            position: "relative",
-                            width: "20%",
-                          }}
                         >
                           <img src={image?.urls?.regular} alt="" />
                           <p>{slicedDescription}</p>
